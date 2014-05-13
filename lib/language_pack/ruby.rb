@@ -495,6 +495,16 @@ WARNING
           cache.load ".bundle"
         end
 
+        puts "WTF???????????"
+        puts `pkg-config --static --libs glib-2.0 gdk-pixbuf-2.0 cairo pango`
+        puts `pkg-config --cflags glib-2.0 gdk-pixbuf-2.0 cairo pango`
+        puts "PATH: #{ENV['PATH']}"
+        puts "LD_LIBRARY_PATH: #{ENV['LD_LIBRARY_PATH']}"
+        puts "LIBRARY_PATH: #{ENV['LIBRARY_PATH']}"
+        puts "PKG_CONFIG_PATH: #{ENV['PKG_CONFIG_PATH']}"
+        puts "CPPPATH: #{ENV['CPPPATH']}"
+        puts "CPATH: #{ENV['CPATH']}"
+
         topic("Installing dependencies using #{bundler.version}")
         load_bundler_cache
 
